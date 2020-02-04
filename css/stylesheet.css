@@ -1,0 +1,25 @@
+header {
+    grid-area: header;
+    background: #662d91;
+    color: #fff;
+    padding: 50px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5em;
+    text-align: center;
+}
+main {
+    grid-area: main;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-family: 'Montserrat', sans-serif;
+}
+img {
+    display: block;
+    margin: auto;
+}
+h1 {
+    font-family: 'Bebas Neue', cursive;
+}
+h2 {
+    font-family: 'Open Sans Condensed', sans-serif;
+}

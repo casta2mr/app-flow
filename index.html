@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>App Flow Redesign Case Study</title>
+        <link rel="stylesheet" href="css/stylesheet.css">
+        <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+        <style>
+            .container {
+                display: grid;
+                grid-template-columns: repeat(1, auto);
+                grid-template-areas:
+                    "header"
+                    "main";
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                App Flow Redesign Case Study
+            </header>
+            <main>
+                <p>You come home from a long day of classes, excited to watch the newest episode of your favorite TV show. You turn on your Roku TV, put on your show, and the intro music blasts through the speakers at a nearly deafening volume. You have two options to save your ears; you can try to find the remote that your roommate probably lost in the couch cushion, or you can use the Roku app on your phone. Having not seen the remote in a week, you decide the Roku app is the best option. You open the app and navigate from the home screen to the remote screen, click the connect button, wait for it to find your TV, and then you can finally turn down the volume and relieve your ears.</p>
+                <p>This is a situation which I’m sure many people have shared similar experiences. While it isn’t the end of the world, some days you just don’t want to have to deal with those extra few steps it takes to change the volume (Ex: Your roommates are sleeping or studying, and you don’t want to bother them). On days like these, the inefficiency of an app can become an irritating inconvenience, and convenience is often what makes or breaks a design.</p>
+                <img src="images/remotes.jpg">
+                <p>Roku OS is one of the most popular options available for streaming systems. It is found on Roku’s own HDMI streaming devices as well as smart TV’s made by TCL and other manufacturers. Roku devices and smart TV’s come with a remote featuring all the necessary inputs to use the Roku OS, such as a power button, volume controls, and several navigation buttons. In the case that the remote is lost or stops working, a smartphone application is offered as an alternative. It connects to Roku devices through a shared Wi-Fi connection and allows users to perform all the tasks they can do using the remote. However, due to extra steps within some of these tasks, the virtual remote often takes longer to use than its physical counterpart.</p>
+                <h1>Design Question</h1>
+                <p>Since this app is meant to be an alternative to a real remote, which is one of the simplest and easiest device interfaces to use, I believe its design should aim to be almost as efficient. <b>What can I do to increase the efficiency of the Roku app, and make it a more usable alternative to the physical remote?</b></p>
+                <h1>Research &amp; Analysis</h1>
+                <h2>Analyzing the Roku App</h2>
+                <p>I began by analyzing the five primary interfaces of the Roku app, as well as some additional screens that affect the time it takes to complete the tasks on the app. I wrote down the function of each interface as well as some things I noticed while using the app.</p>
+                <img src="images/appanalysis.png" width=700px>
+                <h2>User Research</h2>
+                <p>I began by surveying five Roku users I selected. I asked if they preferred to use the physical remote or the Roku app for the six following tasks.</p>
+                <ul>
+                    <li>Powering on the TV</li>
+                    <li>Basic navigation (arrow, OK, back, and home buttons)</li>
+                    <li>Adjusting volume/muting</li>
+                    <li>Changing channels</li>
+                    <li>Searching for content within a channel</li>
+                    <li>Pause/play and fast-forward/rewind</li>
+                </ul>
+                <p>My findings are shown on the chart below. The x-axis represents the number of users that preferred each method.</p>
+                <img src="images/chart1.png" width=700px>
+                <p>All five users preferred to use the physical remote for simple tasks as it was quicker to use for these. One even mentioned that they often choose to get up and find the remote so that they don’t have to use the app later. Some users preferred to use the app for more complex tasks. The users that preferred the app for changing channels said this was because they found the channels screen to be convenient. As for searching for content, the users that preferred the app liked the option to use their smartphone keyboard to type instead of using the OK and arrow buttons to navigate the keyboard on the TV.</p>
+                <p>I then asked the five users to mute the TV using the remote, then using the app. For these tasks, the users began seated on the couch. The remote was placed on a table in front of the couch and their phones were in their pockets. I recorded the times from when I told them to begin the task to when the TV was muted. These times were rounded to the nearest half second and are shown on the x-axis of the chart below.</p>
+                <img src="images/chart2.png" width=700px>
+                <p>Users 1-3 lived in the apartment where the research took place and their phones were already connected to the TV. Users 4 and 5 did not live in the apartment and both of their phones were disconnected from the TV, but it was the last device that user 4 had connected to.</p>
+                <h2>Analyzing Data</h2>
+                <p>Through my analysis of the app and my user research, I found there to be three conditions that affect the time it takes to have access to the remote screen in the Roku app.</p>
+                <ul>
+                    <li>Condition 1: The user’s phone is already connected to the Roku device.</li>
+                    <li>Condition 2: The user’s phone is not connected to the Roku device, but it was the last device the phone was connected to.</li>
+                    <li>Condition 3: The user’s phone is not connected to the Roku device, and it was not the last device the phone was connected to. (In my experience with the app, it will also occasionally ‘forget’ the device it was last connected to, which results in condition 3)</li>
+                </ul>
+                <p>Each of these conditions causes a different user flow from their phone’s home screen to the remote screen in the Roku app. User inputs are marked with purple boxes, and the app’s responding screens are marked with gray boxes in the diagrams below.</p>
+                <img src="images/conditions1.png" height=350px>
+                <h1>Pain Point</h1>
+                <p><b>The Roku app takes more time to adjust the Roku device’s volume than the physical remote.</b> Basic functions such as adjusting volume should take as little time as possible. It took users an average of almost 8 times as long, or 9 seconds longer, to mute the TV using the Roku app rather than the physical remote. Much of this extra time has been found to be caused by an unnecessary amount of user interactions in some conditions.</p>
+                <h1>Ideation &amp; Redesign</h1>
+                <h2>Brainstorming</h2>
+                <p>I began by listing the app’s elements that caused an increase in task completion times.</p>
+                <ol>
+                    <li>‘Roku Channel’ is the app’s default screen when launched, and its content usually takes roughly two seconds to load.</li>
+                    <li>After connecting to a device, the app defaults back to the ‘Roku Channel’ screen.</li>
+                    <li>When the app is not connected to a Roku device, it requires users to tap a ‘Connect’ button even if the last connected device is nearby.</li>
+                    <li>The app only remembers one previously connected device and does not provide any settings options for automatic connections.</li>
+                </ol>
+                <p>I then listed possible solutions to each problem, as well as some other ideas.</p>
+                <ol>
+                    <li>Change the app’s default screen to ‘Remote,’ as this should be the app’s primary function. This would also bypass the loading time for the Roku Channel content when first opening the app. If the app has never been connected to a Roku device on a certain router, the default screen would be the ‘Searching’ screen.</li>
+                    <li>After connecting to a device, the app will default to the ‘Remote’ screen instead of the ‘Roku Channel.’</li>
+                    <li>Implement a feature where if the user’s phone is connected to Wi-Fi, it will automatically check for the last device it was connected to on that router and connect to it upon launching the app.</li>
+                    <li>Add settings options that allow users to choose a default Roku device to connect to while connected to certain routers.</li>
+                </ol>
+                <ul>
+                    <li>For users that have multiple Roku devices in one living space, add a button to the virtual remote that allows users to switch connections by bringing them to the ‘Searching’ screen.</li>
+                    <li>Add a setting that gives users the option to control the volume of the Roku device using their phone’s volume buttons when the screen is off if the Roku app is running. Pressing both volume buttons would mute the device. This would rival the physical remote in efficiency.</li>
+                    <li>Add the navigation bar below the virtual remote and ‘Searching’ screens to ease navigation to other screens upon opening the app.</li>
+                </ul>
+                <h2>New user flows for adjusting the volume of the Roku device</h2>
+                <p>If all solutions listed above are implemented, the user flows for the three conditions that affected task completion times are significantly shortened. This is due to the removal of the ‘Connect’ screen interaction and a prioritization of the virtual remote over the ‘Roku Channel.’</p>
+                <img src="images/conditions2.png" height=350px>
+                <h2>Redesign</h2>
+                <p>The current overall aesthetic of the Roku app is simple, clean, and did not need to be edited. The redesigns I made are as follows:</p>
+                <ul>
+                    <li>Added the navigation bar to the ‘Remote’ and ‘Searching’ screens, removing the need for an X button on the ‘Remote’ screen.</li>
+                    <li>Removed X button on ‘Remote’ screen and replaced it with a ‘switch device’ button, removing the need for a “Connect to a device” option on the ‘More’ screen.</li>
+                    <li>Removed the “Connect to a device” option from the ‘More’ screen and added options to configure default devices and enable volume control using the phone’s hardware buttons.</li>
+                </ul>
+                <img src="images/redesign.png" height=500px>
+                <p>Here are my final before and after comparisons of the visual user flows between opening the app and accessing the virtual remote.</p>
+                <img src="images/beforeafter1.png" width=900px><br>
+                <img src="images/beforeafter2.png" width=900px><br>
+                <img src="images/beforeafter3.png" width=900px><br>
+            </main>
+        </div>
+    </body>
+</html>
